@@ -148,7 +148,7 @@ if [ "$UPDATER" = true ]; then
 	sudo yum install -y readline-devel
 	cd R-3*
 	./configure --with-x=no --with-readline=no --enable-R-profiling=no --enable-memory-profiling=no
-	make
+	make -j `nproc`
 	sudo make install
     sudo su << EOF1
 echo '
